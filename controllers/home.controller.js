@@ -12,7 +12,8 @@ exports.getHome =(req,res,next)=> {
             res.render('index', {
               products: products,
               isUser : req.session.userId,
-            //  isAdmin : req.session.isAdmin
+              isAdmin : req.session.isAdmin,
+              validationError:req.flash('validationError')[0]
         });
     });
     } else{
